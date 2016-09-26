@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "379625275907",
+    "firebase_url": "https://addressbook-420e4.firebaseio.com",
+    "project_id": "addressbook-420e4",
+    "storage_bucket": "addressbook-420e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379625275907:android:44fadfea412ccfbd",
+        "android_client_info": {
+          "package_name": "com.example.trancer.addressbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379625275907-vf6akhijsmmph5f7f5k5t1hg65ks6c2b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.trancer.addressbook",
+            "certificate_hash": "14B9666446CB65268B5E1684DE9369957036D386"
+          }
+        },
+        {
+          "client_id": "379625275907-d1cv9p080fippv0k54h28gkfgalqfolb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-UVYdfkiXLFLBzr53MsqVxg8uA2Fgafc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379625275907-d1cv9p080fippv0k54h28gkfgalqfolb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
