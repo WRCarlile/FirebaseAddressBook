@@ -1,3 +1,7 @@
+package com.example.trancer.addressbook;
+
+import org.parceler.Parcel;
+
 /**
  * Created by Trancer on 9/25/16.
  */
@@ -8,14 +12,13 @@ public class Address {
     String address;
     String zip;
 
-
     public Address() {}
 
-    public Address(String fisrtName, String lastName, String address, String zip) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.address = address;
-    this.zip = zip;
+    public Address(String firstName, String lastName, String address, String zip) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.zip = zip;
     }
 
     public String getLastName() {

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.NewAddressActivity">
+    tools:context=".NewAddressActivity">
 
     <EditText
         android:layout_width="wrap_content"
@@ -15,10 +15,10 @@
         android:inputType="textPostalAddress"
         android:text="Address"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:id="@+id/eTAddress"
+        android:layout_below="@+id/eTLastName"
+        android:layout_alignLeft="@+id/eTLastName"
+        android:layout_alignStart="@+id/eTLastName" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -26,11 +26,11 @@
         android:inputType="textPersonName"
         android:text="First Name"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/etFirstName"
         android:layout_marginTop="36dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/eTAddress"
+        android:layout_alignStart="@+id/eTAddress" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -38,8 +38,8 @@
         android:inputType="textPersonName"
         android:text="Last Name"
         android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/editText2"
+        android:id="@+id/eTLastName"
+        android:layout_below="@+id/etFirstName"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -48,8 +48,8 @@
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText"
+        android:id="@+id/eTZip"
+        android:layout_below="@+id/eTAddress"
         android:layout_centerHorizontal="true" />
 
     <Button
