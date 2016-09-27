@@ -12,17 +12,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:text="Address"
-        android:ems="10"
-        android:id="@+id/eTAddress"
-        android:layout_below="@+id/eTLastName"
-        android:layout_alignLeft="@+id/eTLastName"
-        android:layout_alignStart="@+id/eTLastName" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="First Name"
         android:ems="10"
@@ -42,6 +31,17 @@
         android:layout_below="@+id/etFirstName"
         android:layout_centerHorizontal="true" />
 
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="Address"
+        android:ems="10"
+        android:id="@+id/eTAddress"
+        android:layout_below="@+id/eTLastName"
+        android:layout_alignLeft="@+id/eTLastName"
+        android:layout_alignStart="@+id/eTLastName" />
     <EditText
         android:layout_width="wrap_content"
         android:hint="Zip Code"
@@ -52,12 +52,14 @@
         android:layout_below="@+id/eTAddress"
         android:layout_centerHorizontal="true" />
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Save"
         android:id="@+id/saveFB"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/eTZip"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

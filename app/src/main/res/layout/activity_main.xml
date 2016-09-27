@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/black"
     tools:context=".MainActivity">
 
     <Button
@@ -24,5 +25,5 @@
         android:layout_marginRight="5dp"
         android:layout_below="@+id/btnAddress"
         android:id="@+id/recyclerView"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="20dp" />
 </RelativeLayout>
