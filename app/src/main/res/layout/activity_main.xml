@@ -16,4 +16,13 @@
         android:id="@+id/btnAddress"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/btnAddress"
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="100dp" />
 </RelativeLayout>

@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="First Name"
+        android:hint="First Name"
         android:ems="10"
         android:id="@+id/etFirstName"
         android:layout_marginTop="36dp"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Last Name"
+        android:hint="Last Name"
         android:ems="10"
         android:id="@+id/eTLastName"
         android:layout_below="@+id/etFirstName"
@@ -44,7 +44,7 @@
 
     <EditText
         android:layout_width="wrap_content"
-        android:text="Zip Code"
+        android:hint="Zip Code"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
@@ -55,7 +55,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:hint="Save"
         android:id="@+id/saveFB"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
