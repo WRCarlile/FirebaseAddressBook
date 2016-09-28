@@ -42,6 +42,27 @@
         android:layout_below="@+id/eTLastName"
         android:layout_alignLeft="@+id/eTLastName"
         android:layout_alignStart="@+id/eTLastName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="City"
+        android:ems="10"
+        android:id="@+id/eTCity"
+        android:layout_below="@+id/eTAddress"
+        android:layout_alignLeft="@+id/eTAddress"
+        android:layout_alignStart="@+id/eTAddress"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Save"
+        android:id="@+id/saveFB"
+        android:layout_marginTop="77dp"
+        android:layout_below="@+id/eTZip"
+        android:layout_centerHorizontal="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:hint="Zip Code"
@@ -49,17 +70,19 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/eTZip"
-        android:layout_below="@+id/eTAddress"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/eTCity"
+        android:layout_alignLeft="@+id/eTCity"
+        android:layout_alignStart="@+id/eTCity"
+        android:layout_marginTop="39dp" />
 
-
-    <Button
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Save"
-        android:id="@+id/saveFB"
-        android:layout_marginTop="37dp"
-        android:layout_below="@+id/eTZip"
-        android:layout_centerHorizontal="true" />
-
+        android:inputType="textPersonName"
+        android:hint="State"
+        android:ems="10"
+        android:id="@+id/eTState"
+        android:layout_below="@+id/eTCity"
+        android:layout_alignLeft="@+id/eTZip"
+        android:layout_alignStart="@+id/eTZip" />
 </RelativeLayout>

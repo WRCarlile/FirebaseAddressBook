@@ -15,9 +15,6 @@ import java.util.ArrayList;
 
 public class FirebaseAddressViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    private static final int MAX_WIDTH = 200;
-    private static final int MAX_HEIGHT = 200;
-
     View mView;
     Context mContext;
 
@@ -30,17 +27,22 @@ public class FirebaseAddressViewHolder extends RecyclerView.ViewHolder implement
 
     public void bindAddress(Address address) {
 
-        TextView firstNameTV = (TextView) mView.findViewById(R.id.firstNameTV);
-        TextView lastNameTV = (TextView) mView.findViewById(R.id.lastNameTV);
+        TextView fullNameTV = (TextView) mView.findViewById(R.id.fullNameTV);
         TextView addressTV = (TextView) mView.findViewById(R.id.addressTV);
-        TextView zipTV = (TextView) mView.findViewById(R.id.zipTV);
+        TextView stateAndZipTV = (TextView) mView.findViewById(R.id.zipTV);
 
+        String firstName = address.getFirstName();
+        String lastName = address.getLastName();
+        String city = address.getCity();
+        String state = address.getState();
+        String zip = address.getZip();
 
+        String fullName = lastName + ", " + firstName;
+        String stateAndZip = city + ", " + state + " " + zip;
 
-        firstNameTV.setText(address.getFirstName());
-        lastNameTV.setText(address.getLastName());
+        fullNameTV.setText(fullName);
         addressTV.setText(address.getAddress());
-        zipTV.setText(address.getZip());
+        stateAndZipTV.setText(stateAndZip);
     }
 
     @Override
