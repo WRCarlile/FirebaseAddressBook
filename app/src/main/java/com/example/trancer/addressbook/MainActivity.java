@@ -16,6 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
+
     @Bind(R.id.btnAddress) Button mAddAddress;
     private DatabaseReference mAddressReference;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
