@@ -37,6 +37,7 @@ public class FirebaseAddressViewHolder extends RecyclerView.ViewHolder implement
         TextView fullNameTV = (TextView) mView.findViewById(R.id.fullNameTV);
         TextView addressTV = (TextView) mView.findViewById(R.id.addressTV);
         TextView stateAndZipTV = (TextView) mView.findViewById(R.id.zipTV);
+        TextView birtDateTV = (TextView) mView.findViewById(R.id.birthDateTV);
 
         String firstName = address.getFirstName();
         String lastName = address.getLastName();
@@ -50,6 +51,8 @@ public class FirebaseAddressViewHolder extends RecyclerView.ViewHolder implement
         fullNameTV.setText(fullName);
         addressTV.setText(address.getAddress());
         stateAndZipTV.setText(stateAndZip);
+        birtDateTV.setText(address.getBirthDate());
+
     }
 
     @Override

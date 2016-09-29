@@ -10,16 +10,18 @@ public class Address {
     String city;
     String state;
     String zip;
+    String birthDate;
 
     public Address() {}
 
-    public Address(String firstName, String lastName, String address, String city, String state, String zip) {
+    public Address(String firstName, String lastName, String address, String city, String state, String zip, String birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
+        this.birthDate = birthDate;
     }
 
     public String getFirstName() {
@@ -41,5 +43,7 @@ public class Address {
     }
 
     public String getState() {return state; }
+
+    public String getBirthDate() {return birthDate; }
 }
 

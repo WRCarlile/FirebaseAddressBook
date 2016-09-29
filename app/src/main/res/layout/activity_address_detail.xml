@@ -61,15 +61,33 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="19dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="Date of Birth"
+            android:id="@+id/birthDateTV"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:paddingBottom="10dp"
+            android:fontFamily="@string/font_family"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp" />
     </LinearLayout>
 
     <Button
         android:text="Delete"
+        android:fontFamily="@string/font_family"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
         android:id="@+id/deleteBtn" />
+
+
 </RelativeLayout>

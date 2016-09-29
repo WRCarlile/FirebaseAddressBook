@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,6 +67,23 @@
                 android:textAlignment="center"
                 android:text="zip"
                 android:id="@+id/zipTV"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@android:color/black"
+                android:paddingBottom="10dp"
+                android:fontFamily="@string/font_family"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="Date of Birth"
+                android:id="@+id/birthDateTV"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@android:color/black"
                 android:paddingBottom="10dp"

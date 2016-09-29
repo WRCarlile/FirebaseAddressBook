@@ -25,6 +25,7 @@ public class NewAddressActivity extends AppCompatActivity {
     @Bind(R.id.eTCity) EditText mCity;
     @Bind(R.id.eTState) EditText mState;
     @Bind(R.id.eTZip) EditText mZip;
+    @Bind(R.id.eTBirthDate) EditText mBirthDate;
     @Bind(R.id.saveFB) Button mSaveBtn;
 
     @Override
@@ -71,23 +72,27 @@ public class NewAddressActivity extends AppCompatActivity {
                     mZip.setError("Enter Zip");
                     return;
                 }
+                if (mBirthDate.getText().toString().trim().length() <= 0) {
+                    Toast.makeText(NewAddressActivity.this, "Enter Date of Birth", Toast.LENGTH_SHORT).show();
+                    mBirthDate.setError("Enter Date of Birth");
+                    return;
+                }
 
-                    String firstName = mFirstName.getText().toString();
-                    String lastName = mLastName.getText().toString();
-                    String address = mAddress.getText().toString();
-                    String city = mCity.getText().toString();
-                    String state = mState.getText().toString();
-                    String zip = mZip.getText().toString();
-                    Address addressObject = new Address(firstName,lastName,address,city, state,zip);
-                    saveToFirebase(addressObject);
-                    Intent intent = new Intent(NewAddressActivity.this, MainActivity.class);
-                    startActivity(intent);
-
+                String firstName = mFirstName.getText().toString();
+                String lastName = mLastName.getText().toString();
+                String address = mAddress.getText().toString();
+                String city = mCity.getText().toString();
+                String state = mState.getText().toString();
+                String zip = mZip.getText().toString();
+                String birthDate = mBirthDate.getText().toString();
+                Address addressObject = new Address(firstName, lastName, address, city, state, zip, birthDate);
+                saveToFirebase(addressObject);
+                Intent intent = new Intent(NewAddressActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
     public void saveToFirebase(Address address) {
         mCreateNewAddressReference.push().setValue(address);
     }
-
 }

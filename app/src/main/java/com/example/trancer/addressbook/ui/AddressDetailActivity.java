@@ -28,6 +28,7 @@ public class AddressDetailActivity extends AppCompatActivity {
     @Bind(R.id.fullNameTV) TextView mFullName;
     @Bind(R.id.addressTV) TextView mAddressTV;
     @Bind(R.id.zipTV) TextView mStateAndZipTV;
+    @Bind(R.id.birthDateTV) TextView mBirthDate;
     @Bind(R.id.deleteBtn) Button mDelete;
 
     private ArrayList<Address> mAddress = new ArrayList<>();
@@ -57,6 +58,7 @@ public class AddressDetailActivity extends AppCompatActivity {
         mFullName.setText(fullName);
         mAddressTV.setText(detail.getAddress());
         mStateAndZipTV.setText(stateAndZip);
+        mBirthDate.setText(detail.getBirthDate());
 
         mDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +73,7 @@ public class AddressDetailActivity extends AppCompatActivity {
                         for (DataSnapshot addressSnapshot : dataSnapshot.getChildren()) {
                             Address node = addressSnapshot.getValue(Address.class);
 
-                            if(node.getFirstName().equals(detail.getFirstName())&&node.getLastName().equals(detail.getLastName())&&node.getAddress().equals(detail.getAddress())&&node.getCity().equals(detail.getCity())&&node.getState().equals(detail.getState())&&node.getZip().equals(detail.getZip())) {
+                            if(node.getFirstName().equals(detail.getFirstName())&&node.getLastName().equals(detail.getLastName())&&node.getAddress().equals(detail.getAddress())&&node.getCity().equals(detail.getCity())&&node.getState().equals(detail.getState())&&node.getZip().equals(detail.getZip())&&node.getBirthDate().equals(detail.getBirthDate())) {
                                 String key = addressSnapshot.getKey();
                                 mAddressReference.getRef().child(key).removeValue();
                                 Log.d("data node", mAddressReference.child(key).toString());

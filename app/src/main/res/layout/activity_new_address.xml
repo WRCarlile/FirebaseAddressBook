@@ -85,4 +85,15 @@
         android:layout_below="@+id/eTCity"
         android:layout_alignLeft="@+id/eTZip"
         android:layout_alignStart="@+id/eTZip" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:hint="Date of Birth"
+        android:id="@+id/eTBirthDate"
+        android:layout_below="@+id/eTZip"
+        android:layout_alignLeft="@+id/eTZip"
+        android:layout_alignStart="@+id/eTZip" />
 </RelativeLayout>
