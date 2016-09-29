@@ -1,4 +1,4 @@
-package com.example.trancer.addressbook;
+package com.example.trancer.addressbook.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.trancer.addressbook.Constants;
+import com.example.trancer.addressbook.R;
+import com.example.trancer.addressbook.adapters.FirebaseAddressViewHolder;
+import com.example.trancer.addressbook.models.Address;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

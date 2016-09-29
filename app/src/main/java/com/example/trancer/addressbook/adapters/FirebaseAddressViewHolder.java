@@ -1,12 +1,15 @@
-package com.example.trancer.addressbook;
+package com.example.trancer.addressbook.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.trancer.addressbook.Constants;
+import com.example.trancer.addressbook.R;
+import com.example.trancer.addressbook.models.Address;
+import com.example.trancer.addressbook.ui.AddressDetailActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

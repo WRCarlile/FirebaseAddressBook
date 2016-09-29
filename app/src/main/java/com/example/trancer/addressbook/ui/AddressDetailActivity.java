@@ -1,7 +1,6 @@
-package com.example.trancer.addressbook;
+package com.example.trancer.addressbook.ui;
 
 import android.content.Intent;
-import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,20 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.ChildEventListener;
+import com.example.trancer.addressbook.R;
+import com.example.trancer.addressbook.models.Address;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
 import org.parceler.Parcels;
-
 import java.util.ArrayList;
-import java.util.Map;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -51,9 +45,6 @@ public class AddressDetailActivity extends AppCompatActivity {
 
         final Address detail = mAddress.get(startingPosition);
 
-        Log.d("starting Position", startingPosition + "");
-        Log.d("parcel", detail + "");
-
         String firstName = detail.getFirstName();
         String lastName = detail.getLastName();
         String city = detail.getCity();
@@ -67,20 +58,15 @@ public class AddressDetailActivity extends AppCompatActivity {
         mAddressTV.setText(detail.getAddress());
         mStateAndZipTV.setText(stateAndZip);
 
-
-
         mDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 mAddressReference = FirebaseDatabase.getInstance().getReference("address");
 
-//                mAddressReference.child(queryRef).removeValue();
-//                Log.d("queryRef", queryRef +"");
                 mAddressReferenceListener = mAddressReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-//                     Address node = dataSnapshot.child("address").getValue(Address.class);
 
                         for (DataSnapshot addressSnapshot : dataSnapshot.getChildren()) {
                             Address node = addressSnapshot.getValue(Address.class);
@@ -89,16 +75,8 @@ public class AddressDetailActivity extends AppCompatActivity {
                                 String key = addressSnapshot.getKey();
                                 mAddressReference.getRef().child(key).removeValue();
                                 Log.d("data node", mAddressReference.child(key).toString());
-//                                node.child(key).removeValue();
                             }
-//                            Map<String, Boolean> firstName = node.getFirstName();
-//                            for (String key: tags.keySet()) {
-//                                if(key.equals(mLevelOneTag.toLowerCase())){
 
-//                        final Query queryRef = dataSnapshot.orderByChild("address").equalTo(detail.getFirstName());
-//                        dataSnapshot.child(queryRef).remove();
-
-//                        node.getRef().setValue(null);
                         }
                     }
                     @Override

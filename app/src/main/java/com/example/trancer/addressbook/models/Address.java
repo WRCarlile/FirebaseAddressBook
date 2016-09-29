@@ -1,10 +1,7 @@
-package com.example.trancer.addressbook;
+package com.example.trancer.addressbook.models;
 
 import org.parceler.Parcel;
 
-/**
- * Created by Trancer on 9/25/16.
- */
 @Parcel
 public class Address {
     String firstName;
