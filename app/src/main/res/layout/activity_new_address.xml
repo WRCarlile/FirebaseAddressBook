@@ -100,12 +100,12 @@
         android:layout_alignStart="@+id/eTZip" />
 
     <Button
-        android:text="SELECT DATE"
+        android:text="DATE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/birthBtn"
         android:layout_alignBaseline="@+id/eTBirthDate"
         android:layout_alignBottom="@+id/eTBirthDate"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/eTZip"
+        android:layout_toEndOf="@+id/eTZip" />
 </RelativeLayout>

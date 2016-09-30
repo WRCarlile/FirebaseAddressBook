@@ -3,9 +3,6 @@ package com.example.trancer.addressbook.ui;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import java.util.Calendar;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,8 +25,6 @@ import butterknife.ButterKnife;
 public class NewAddressActivity extends AppCompatActivity implements View.OnClickListener{
     private DatabaseReference mCreateNewAddressReference;
     private int mYear, mMonth, mDay;
-    private DateValidator dateValidator;
-    private static final String DATE_PATTERN = "(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)";
     @Bind(R.id.etFirstName) EditText mFirstName;
     @Bind(R.id.eTLastName) EditText mLastName;
     @Bind(R.id.eTAddress) EditText mAddress;
@@ -90,22 +85,19 @@ public class NewAddressActivity extends AppCompatActivity implements View.OnClic
             }
 
             if (mBirthDate.getText().toString().trim().length() <= 0) {
-                Toast.makeText(NewAddressActivity.this, "Enter Date mm/dd/yyyy", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewAddressActivity.this, "Enter Date of Birth", Toast.LENGTH_SHORT).show();
                 mBirthDate.setError("Enter Date of Birth");
                 return;
             }
-            DateValidator test = new DateValidator();
+            DateValidator dateValidator = new DateValidator();
             String birthDate = mBirthDate.getText().toString();
-            Log.d("birth", birthDate.toString());
-            boolean valid = test.validate(birthDate);
+            boolean valid = dateValidator.validate(birthDate);
 
-            Log.d("valid", valid +"");
             if (valid == false) {
                 Toast.makeText(NewAddressActivity.this, "Enter Date mm/dd/yyyy", Toast.LENGTH_SHORT).show();
-                mBirthDate.setError("Enter Date of Birth");
+                mBirthDate.setError("Enter Date mm/dd/yyyy");
                 return;
             }
-
 
             String firstName = mFirstName.getText().toString();
             String lastName = mLastName.getText().toString();
@@ -113,7 +105,6 @@ public class NewAddressActivity extends AppCompatActivity implements View.OnClic
             String city = mCity.getText().toString();
             String state = mState.getText().toString();
             String zip = mZip.getText().toString();
-//            String birthDate = mBirthDate.getText().toString();
             Address addressObject = new Address(firstName, lastName, address, city, state, zip, birthDate);
             saveToFirebase(addressObject);
             Intent intent = new Intent(NewAddressActivity.this, MainActivity.class);
@@ -125,7 +116,6 @@ public class NewAddressActivity extends AppCompatActivity implements View.OnClic
             mYear = c.get(Calendar.YEAR);
             mMonth = c.get(Calendar.MONTH);
             mDay = c.get(Calendar.DAY_OF_MONTH);
-
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                     new DatePickerDialog.OnDateSetListener() {
