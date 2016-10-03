@@ -53,15 +53,5 @@ public class Address {
 
     public String getPushId() {return pushId;}
 
-    public void setValues(Address updateAddress){
-        this.firstName = updateAddress.firstName;
-        this.lastName = updateAddress.lastName;
-        this.address = updateAddress.address;
-        this.city = updateAddress.city;
-        this.state = updateAddress.state;
-        this.zip = updateAddress.zip;
-        this.birthDate = updateAddress.birthDate;
-        this.pushId = updateAddress.pushId;
-    }
 }
 

@@ -15,8 +15,6 @@ import com.example.trancer.addressbook.Constants;
 import com.example.trancer.addressbook.R;
 import com.example.trancer.addressbook.adapters.DateValidator;
 import com.example.trancer.addressbook.models.Address;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -69,9 +67,6 @@ public class UpdateAddressActivity extends AppCompatActivity implements View.OnC
         mState.setText(detail.getState());
         mZip.setText(detail.getZip());
         mBirthDate.setText(detail.getBirthDate());
-
-
-
 
         mSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,7 +168,6 @@ public class UpdateAddressActivity extends AppCompatActivity implements View.OnC
         String pushRefId = pushRef.getKey();
         address.setPushId(pushRefId);
         pushRef.setValue(address);
-
         Intent intent = new Intent(UpdateAddressActivity.this, MainActivity.class);
         startActivity(intent);
 
