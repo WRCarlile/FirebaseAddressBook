@@ -9,7 +9,7 @@ public class DateValidator{
     private Matcher matcher;
 
     private static final String DATE_PATTERN =
-            "((0?[1-9]|1[012])/0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)";
+            "(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)";
 
     public DateValidator(){
         pattern = Pattern.compile(DATE_PATTERN);
