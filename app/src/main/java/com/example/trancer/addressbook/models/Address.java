@@ -1,5 +1,7 @@
 package com.example.trancer.addressbook.models;
 
+import com.google.firebase.database.Exclude;
+
 import org.parceler.Parcel;
 
 @Parcel
@@ -11,6 +13,7 @@ public class Address {
     String state;
     String zip;
     String birthDate;
+    private String pushId;
 
     public Address() {}
 
@@ -45,5 +48,20 @@ public class Address {
     public String getState() {return state; }
 
     public String getBirthDate() {return birthDate; }
+
+    public void setPushId(String pushId) {this.pushId = pushId;}
+
+    public String getPushId() {return pushId;}
+
+    public void setValues(Address updateAddress){
+        this.firstName = updateAddress.firstName;
+        this.lastName = updateAddress.lastName;
+        this.address = updateAddress.address;
+        this.city = updateAddress.city;
+        this.state = updateAddress.state;
+        this.zip = updateAddress.zip;
+        this.birthDate = updateAddress.birthDate;
+        this.pushId = updateAddress.pushId;
+    }
 }
 

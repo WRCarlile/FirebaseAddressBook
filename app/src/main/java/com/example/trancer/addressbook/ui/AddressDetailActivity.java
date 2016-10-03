@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.trancer.addressbook.R;
 import com.example.trancer.addressbook.models.Address;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,20 +31,18 @@ public class AddressDetailActivity extends AppCompatActivity {
     @Bind(R.id.zipTV) TextView mStateAndZipTV;
     @Bind(R.id.birthDateTV) TextView mBirthDate;
     @Bind(R.id.deleteBtn) Button mDelete;
+    @Bind(R.id.updateBtn) Button mUpdate;
 
     private ArrayList<Address> mAddress = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_address_detail);
         ButterKnife.bind(this);
 
-        final int startingPosition = getIntent().getIntExtra("position", 0);
         mAddress = Parcels.unwrap(getIntent().getParcelableExtra("address"));
-
+        final int startingPosition = getIntent().getIntExtra("position", 0);
         final Address detail = mAddress.get(startingPosition);
 
         String firstName = detail.getFirstName();
@@ -65,7 +64,7 @@ public class AddressDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 mAddressReference = FirebaseDatabase.getInstance().getReference("address");
-
+                Log.d("clicked", "its clicked");
                 mAddressReferenceListener = mAddressReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,10 +72,11 @@ public class AddressDetailActivity extends AppCompatActivity {
                         for (DataSnapshot addressSnapshot : dataSnapshot.getChildren()) {
                             Address node = addressSnapshot.getValue(Address.class);
 
-                            if(node.getFirstName().equals(detail.getFirstName())&&node.getLastName().equals(detail.getLastName())&&node.getAddress().equals(detail.getAddress())&&node.getCity().equals(detail.getCity())&&node.getState().equals(detail.getState())&&node.getZip().equals(detail.getZip())&&node.getBirthDate().equals(detail.getBirthDate())) {
-                                String key = addressSnapshot.getKey();
-                                mAddressReference.getRef().child(key).removeValue();
-                                Log.d("data node", mAddressReference.child(key).toString());
+                            if(node.getPushId().equals(detail.getPushId())){
+
+                            String key = addressSnapshot.getKey();
+                            mAddressReference.getRef().child(key).removeValue();
+                            Log.d("data node", mAddressReference.child(key).toString());
                             }
 
                         }
@@ -89,7 +89,20 @@ public class AddressDetailActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(AddressDetailActivity.this, MainActivity.class);
                 startActivity(intent);
+
+            }
+        });
+
+        mUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddressDetailActivity.this, UpdateAddressActivity.class);
+                intent.putExtra("position", startingPosition);
+                intent.putExtra("address", Parcels.wrap(mAddress));
+                startActivity(intent);
             }
         });
     }
 }
+
+

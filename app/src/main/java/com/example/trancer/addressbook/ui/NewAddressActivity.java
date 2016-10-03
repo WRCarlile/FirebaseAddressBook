@@ -16,6 +16,7 @@ import com.example.trancer.addressbook.Constants;
 import com.example.trancer.addressbook.R;
 import com.example.trancer.addressbook.adapters.DateValidator;
 import com.example.trancer.addressbook.models.Address;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,6 +25,7 @@ import butterknife.ButterKnife;
 
 public class NewAddressActivity extends AppCompatActivity implements View.OnClickListener{
     private DatabaseReference mCreateNewAddressReference;
+    private ChildEventListener mAddressListener;
     private int mYear, mMonth, mDay;
     @Bind(R.id.etFirstName) EditText mFirstName;
     @Bind(R.id.eTLastName) EditText mLastName;
@@ -134,6 +136,10 @@ public class NewAddressActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void saveToFirebase(Address address) {
-        mCreateNewAddressReference.push().setValue(address);
+        DatabaseReference pushRef = mCreateNewAddressReference.push();
+        String pushId = pushRef.getKey();
+        address.setPushId(pushId);
+        pushRef.setValue(address);
+
     }
 }

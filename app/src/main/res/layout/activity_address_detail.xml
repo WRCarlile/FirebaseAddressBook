@@ -80,14 +80,29 @@
     </LinearLayout>
 
     <Button
+        android:text="UPDATE"
+        android:fontFamily="@string/font_family"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateBtn"
+        android:layout_alignTop="@+id/deleteBtn"
+        android:layout_toRightOf="@+id/deleteBtn"
+        android:layout_toEndOf="@+id/deleteBtn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
+
+    <Button
         android:text="Delete"
         android:fontFamily="@string/font_family"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
-        android:id="@+id/deleteBtn" />
+        android:id="@+id/deleteBtn"
+        android:layout_marginLeft="120dp"
+        android:layout_marginStart="120dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

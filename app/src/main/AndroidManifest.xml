@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.NewAddressActivity" />
-        <activity android:name=".ui.AddressDetailActivity"></activity>
+        <activity android:name=".ui.AddressDetailActivity" />
+        <activity android:name=".ui.UpdateAddressActivity"></activity>
     </application>
 
 </manifest>

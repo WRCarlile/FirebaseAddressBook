@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ui.NewAddressActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="First Name"
+        android:ems="10"
+        android:id="@+id/etFirstName"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/eTAddress"
+        android:layout_alignStart="@+id/eTAddress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Last Name"
+        android:ems="10"
+        android:id="@+id/eTLastName"
+        android:layout_below="@+id/etFirstName"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="Address"
+        android:ems="10"
+        android:id="@+id/eTAddress"
+        android:layout_below="@+id/eTLastName"
+        android:layout_alignLeft="@+id/eTLastName"
+        android:layout_alignStart="@+id/eTLastName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:hint="City"
+        android:ems="10"
+        android:id="@+id/eTCity"
+        android:layout_below="@+id/eTAddress"
+        android:layout_alignLeft="@+id/eTAddress"
+        android:layout_alignStart="@+id/eTAddress"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Save"
+        android:id="@+id/saveFB"
+        android:layout_marginTop="77dp"
+        android:layout_below="@+id/eTZip"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:hint="Zip Code"
+        android:maxLength="5"
+        android:digits="0123456789"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/eTZip"
+        android:layout_below="@+id/eTCity"
+        android:layout_alignLeft="@+id/eTCity"
+        android:layout_alignStart="@+id/eTCity"
+        android:layout_marginTop="39dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="State"
+        android:ems="10"
+        android:id="@+id/eTState"
+        android:layout_below="@+id/eTCity"
+        android:layout_alignLeft="@+id/eTZip"
+        android:layout_alignStart="@+id/eTZip" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:hint="Date of Birth"
+        android:id="@+id/eTBirthDate"
+        android:layout_below="@+id/eTZip"
+        android:layout_alignLeft="@+id/eTZip"
+        android:layout_alignStart="@+id/eTZip" />
+
+    <Button
+        android:text="DATE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/birthBtn"
+        android:layout_alignBaseline="@+id/eTBirthDate"
+        android:layout_alignBottom="@+id/eTBirthDate"
+        android:layout_toRightOf="@+id/eTZip"
+        android:layout_toEndOf="@+id/eTZip" />
+</RelativeLayout>
