@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:fontFamily="@string/font_family"
         android:hint="First Name"
         android:ems="10"
         android:id="@+id/etFirstName"
@@ -23,6 +24,7 @@
 
     <EditText
         android:layout_width="wrap_content"
+        android:fontFamily="@string/font_family"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="Last Name"
@@ -35,6 +37,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@string/font_family"
         android:inputType="textPostalAddress"
         android:hint="Address"
         android:ems="10"
@@ -49,6 +52,7 @@
         android:inputType="textPostalAddress"
         android:hint="City"
         android:ems="10"
+        android:fontFamily="@string/font_family"
         android:id="@+id/eTCity"
         android:layout_below="@+id/eTAddress"
         android:layout_alignLeft="@+id/eTAddress"
@@ -57,9 +61,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Save"
+        android:hint="SAVE"
         android:id="@+id/saveFB"
         android:layout_marginTop="77dp"
+        android:fontFamily="@string/font_family"
         android:layout_below="@+id/eTZip"
         android:layout_centerHorizontal="true" />
 
@@ -68,6 +73,7 @@
         android:hint="Zip Code"
         android:maxLength="5"
         android:digits="0123456789"
+        android:fontFamily="@string/font_family"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:ems="10"
@@ -81,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:fontFamily="@string/font_family"
         android:hint="State"
         android:ems="10"
         android:id="@+id/eTState"
@@ -92,6 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date"
+        android:fontFamily="@string/font_family"
         android:ems="10"
         android:hint="Date of Birth"
         android:id="@+id/eTBirthDate"
@@ -107,5 +115,6 @@
         android:layout_alignBaseline="@+id/eTBirthDate"
         android:layout_alignBottom="@+id/eTBirthDate"
         android:layout_toRightOf="@+id/eTZip"
-        android:layout_toEndOf="@+id/eTZip" />
+        android:layout_toEndOf="@+id/eTZip"
+        android:fontFamily="@string/font_family" />
 </RelativeLayout>

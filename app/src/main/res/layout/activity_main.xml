@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Address"
+        android:fontFamily="@string/font_family"
         android:id="@+id/btnAddress"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
